@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color:#c4dbb4;
+    color: #fff;
+    height: 100vh;
+}
+
+header {
+    padding: 20px;
+    background: #72b1a4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 999;
+}
+
+header img {
+    float: left;
+    height: 40px;
+    margin-right: 20px;
+}
+
+nav {
+    float: right;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #539fa2;
+}
+
+.catalog {
+    padding: 50px 0;
+    margin: 60px auto 0;
+}
+
+/*-------------    INDEX    --------------  */
+
+.titles {
+    text-align: center;
+    font-size: 37px;
+    font-family: 'Bungee', sans-serif;
+}
+
+/*-----------------------------------------*/
+
+.TOPIC-ANIME-DISCUT{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.DESC-ANIME-DISCUT {
+    font-size: 20px;
+}
+
+.TITLE-TEMA {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Bungee', sans-serif;
+}
+
+.CSS-COMEN {
+    text-align: center;
+    background: #72b1a4;
+    padding: 2rem;
+    border-radius: 50px;
+    margin-bottom: 50px;
+}
+
+.LOGIN {
+    display: flex;
+    outline: none;
+    border: 0;
+    background: #3f787a;
+}
+
+.LOGIN input {
+    color: white;
+}
+
+.COMENTARIOS textarea {
+    text-align: center;
+    resize: none;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background: none;
+    border-radius: 20px;
+    border: solid 3px #3f787a;
+}
+
+.COMMENTS {
+    background: #3f787a;
+    border-radius: 20px;
+}
+
+.COMMENT {
+    font-size: 25px;
+    margin-left: 50px;
+    font-family: 'Indie flower', sans-serif;
+    margin-top: .37rem;
+}
+
+/*-------------    DASHBOARD    --------------  */
+.corpo {
+    padding: 0  50px;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left {
+    width: 33vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.midle {
+    width: 33vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+.right {
+    width: 33vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.animes {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+
+}
+.animes:hover {
+    color: rgb(156, 155, 155);
+}
+
+.new-anime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #72b1a4;
+    padding: 2rem;
+    border-radius: 50px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .37rem;
+}
+.input-box input {
+    margin: .6rem 0;
+    padding: .8rem 1.2rem;
+    border: none;
+    border-radius: 50px;
+    background: #D9D9D9;
+    box-shadow: 1px 1px 6px #0000001C;
+    font-size: 1rem;
+    outline: none;
+    text-align: center;
+}
+.input-box textarea {
+    margin: .6rem 0;
+    padding: .8rem 1.2rem;
+    border: none;
+    border-radius: 50px;
+    background: #D9D9D9;
+    box-shadow: 1px 1px 6px #0000001C;
+    font-size: 1rem;
+    outline: none;
+    resize: none;
+    text-align: center;
+}
+
+.input-box .SUBMIT-BTN {
+    background-color: #539fa2;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.input-box .SUBMIT-BTN:hover{
+    background-color: #3f787a;
+}
+
+/*-----------------------------------------*/
+
+/*-------------    DISCUSSAO    --------------  */
+.IMG-DISCUSSAO{
+    width: 3000px;
+    padding: 0 .8rem;
+}
+
+.LOOKER{
+    display: flex;
+    margin: .6rem 0;
+    padding: .8rem 1.2rem;
+}
+
+.MARGIN{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*----------------------------------------------*/
+
+/*-------------    MODIFICAR ANIME    --------------  */
+
+.EXCLUIR-ANIME-BTN {
+    padding: 15px 30px;
+}
+
+.CENTER {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 9vh;
+}
+
+/*---------------------------------------------------*/
+
+
+.catalogo-item {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: calc(33.33% - 60px);
+    margin: 20px;
+    padding: 10px;
+    height: 300px;
+}
+
+.catalogo-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.catalogo-item:hover img {
+    filter: brightness(40%);
+}
+
+.catalogo-item-textos {
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.catalogo-item:hover .catalogo-item-textos {
+    opacity: 1;
+}
+
+.catalogo-item-textos h2 {
+    font-size: 24px;
+    font-family: 'Bungee',sans-serif;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    margin: 0px;
+}
+
+.catalogo-item-textos h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 1.4;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.catalogo-item-textos button {
+    background-color: #72b1a4;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.catalogo-item-textos button:hover {
+    background-color: #539fa2;
+    color: #fff;
+}
+
+.catalogo-item-textos a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+section{
+    clear: both;
+}
+footer{
+    padding: 50px 0;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    background-color: #e50914;		
+    clear: both;	
+}
+.destaque-item {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: calc(100% - 60px);
+    margin: 20px;
+    padding: 10px;
+    height: 300px;
+}
+
+.destaque-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.destaque-item:hover img {
+    filter: brightness(60%);
+}
+
+.destaque-item-textos {
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.destaque-item:hover .destaque-item-textos {
+    opacity: 1;
+}
+
+.destaque-item-textos h2 {
+    font-size: 24px;
+    font-weight: normal;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px;
+}
+
+.destaque-item-textos p {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.4;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.destaque-item-textos button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.destaque-item-textos button:hover {
+    background-color: #e50914;
+    color: #fff;
+}
+aside{
+    position: relative;
+    z-index: 1;
+    float: right;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}	
+.destaque-item:hover aside{
+    opacity: 1;
+}	

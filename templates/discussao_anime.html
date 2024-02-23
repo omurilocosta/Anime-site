@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ANIMATEX</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/ICON-ANIMATEX.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/LOGO-ANIMATEX.png') }}" alt="Netflix">
+        <nav>
+            <ul><!-- links para as defs que chamam as páginas de início (index) e de logout -->
+                <li><a href="{{ url_for('home') }}">Início</a></li>
+                <li><a href="{{ url_for('logout') }}">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="corpo">
+            <div class="catalog">
+                <h2 class="titles" name="titulo_card">{{card_selecionada.titulo}}</h2>
+                <div class="LOOKER">
+                    <img class="IMG-DISCUSSAO" src="{{ url_for('static', filename='images/' + card_selecionada.imagem) }}" alt="">
+                    <div class="TEXTOS">
+                        <h1 class="TOPIC-ANIME-DISCUT">{{card_selecionada.topico}}</h1>
+                        <p class="DESC-ANIME-DISCUT">{{card_selecionada.descricao}}</p>
+                    </div>
+                </div>
+                <div class="CSS-COMEN">
+                    <form action="{{url_for('adicionar_comentario')}}" method="post">
+                        <h2>Comentários</h2>
+                        <input type="hidden" name="titulo_card" value="{{card_selecionada.titulo}}">
+                        <div class="COMENTARIOS">
+                            <textarea name="comentario" required></textarea>
+                        </div>
+                        <div class="input-box">
+                            <input class="SUBMIT-BTN" type="submit" value="comentar" />
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    {% for comentario in card_selecionada.comentarios %}
+                        <div class="COMMENTS">
+                            <p class="COMMENT">{{comentario}}</>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+             
+    </main>
+</body>
+</html>    

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ANIMATEX</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/ICON-ANIMATEX.png ') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/LOGO-ANIMATEX.png') }}" alt="Netflix">
+        <nav>
+            <ul><!-- mostra o fomulário somente se a pessoa não tiver feito login ainda -->
+                {% if session["login"]==False %}
+                <form method="post" action="{{ url_for('dashboard') }}">
+                    <li><a href="#">Início</a></li>
+                    <li><input class="LOGIN" type="email" name="email" placeholder="Digite seu e-mail aqui" /></li>
+                    <li><input class="LOGIN" type="password" name="senha" placeholder="Digite sua senha aqui" /></li>
+                    <li><input class="SUBMIT-BTN" type="submit" value="Login"/></li>
+                </form>
+                <!-- se a pessoa já fez login, mostra o link para a página de gerenciamento 
+                    e  link para fazer logout -->
+                {% else %}
+                    <li><a href="{{ url_for('dashboard') }}">Gerenciar</a></li>
+                    <li><a href="{{ url_for('logout') }}">Sair</a></li>
+                {% endif%}
+            </ul>
+        </nav>
+    </header>
+    <main class="catalog">
+        {% for tema in parCatalogo %}
+        <section>
+            <h1 class="titles">{{tema.nome}}</h1>
+            {% for card in tema.conteudos or tema.discussoes %}
+            <article class="catalogo-item">
+                <img src="{{ url_for('static', filename='images/' + card.imagem) }}" alt="{{ card.titulo }}">
+                <div class="catalogo-item-textos">
+                    <h2>{{ card.titulo }}</h2>
+                    <h3>{{ card.topico }}</h3>
+                    <button>
+                        <a href="{{url_for('discussao_anime', titulo_da_serie=card.titulo)}}">ver mais</a>
+                    </button>
+                </div>
+            </article>
+            {% endfor %}
+        </section>
+        {% endfor %}
+    </main>
+</body>
+</html>    

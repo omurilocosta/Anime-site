@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ANIMATEX</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/ICON-ANIMATEX.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/LOGO-ANIMATEX.png') }}" alt="Netflix">
+        <nav>
+            <ul><!-- links para as defs que chamam as páginas de início (index) e de logout -->
+                <li><a href="{{ url_for('home') }}">Início</a></li>
+                <li><a href="{{ url_for('logout') }}">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="corpo">
+        <div class="main">
+            <div class="midle">
+                <h2 class="titles">Animes cadastrados:</h2>
+                <ul>
+                    {% for tema in parCatalogo %}
+                        <h4 class="TITLE-TEMA">{{tema.nome}}</h4>
+                        {% for card in tema.conteudos or tema.discussoes %}
+                            <li><a class="animes" href="{{url_for('modificar_serie', titulo_da_card=card.titulo)}}">{{card.titulo}}</a></li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="right">
+                <div class="new-anime">
+                    <form action="{{url_for('adicionar_serie')}}" enctype="multipart/form-data" method="post">
+                        <h4 class="form-header">Insira os detalhes para um novo conteúdo</h4>
+                        <div class="input-box">
+                            <input type="text" name="titulo_nova_card" placeholder="Nome do anime" required />
+                        </div>
+                        <div class="input-box">
+                            <input type="file" name="imagem_upload" placeholder="Imagem" required />
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="imagem_nova_card" placeholder="Digite o nome da imagem" required />
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="topico_nova_card" placeholder="Tópico da discussão" required />
+                        </div>
+                        <div class="input-box">
+                            <textarea name="argumento_nova_card" placeholder="Argumente" required></textarea>
+                        </div>
+                        <label>Tema Associado:
+                            <!-- Dropdown para selecionar o tema associado à série -->
+                            <select name="tema_associado" required>
+                                {% for tema in parCatalogo %}
+                                    <option value="{{ tema.nome }}">{{ tema.nome }}</option>
+                                {% endfor %}
+                            </select>
+                        </label><br/>
+                        <div class="input-box">
+                            <input class="SUBMIT-BTN" type="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>      
+
+</body>
+</html>    

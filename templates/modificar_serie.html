@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ANIMATEX</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/ICON-ANIMATEX.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/LOGO-ANIMATEX.png') }}" alt="Netflix">
+        <nav>
+            <ul><!-- links para as defs que chamam as páginas de início (index) e de logout -->
+                <li><a href="{{ url_for('home') }}">Início</a></li>
+                <li><a href="{{ url_for('logout') }}">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="corpo">
+            <div class="main">
+                <div class="CENTER">
+                    <div class="new-anime">
+                        <h2 class="titles">Atualizar anime</h2>
+                        <form method="post" action="{{url_for('processar_serie')}}" >
+                            <div class="input-box">
+                                <input type="text" name="novo_titulo_serie" value="{{ serie_selecionada.titulo }}" />
+                            </div>
+
+                            <div class="input-box">
+                                <input type="file" name="novo_imagem_upload"/>
+                            </div>
+        
+                            <div class="input-box">
+                                <input type="text" name="novo_imagem_serie" value="{{ serie_selecionada.imagem }}" />
+                            </div>
+
+                            <div class="input-box">
+                                <input type="text" name="novo_topico_serie" value="{{ serie_selecionada.topico }}" />
+                            </div>
+
+                            <div class="input-box">
+                                <textarea name="novo_argumento_serie">{{ serie_selecionada.descricao }}</textarea>
+                            </div>
+
+                            <input type="hidden" name="titulo_atual" value="{{ serie_selecionada.titulo }}" />
+                            <div class="input-box">
+                                <input class="SUBMIT-BTN" type="submit" />
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <h2>Quer excluir essa série?</h2>
+                    <form method="post" action="{{url_for('excluir_serie')}}" >
+                        <input type="hidden" name="titulo_atual" value="{{ serie_selecionada.titulo }}" />
+                        <input class="EXCLUIR-ANIME-BTN" type="submit" value="Excluir {{ titulo_atual }}" />
+                    </form>
+                </div>
+            </div>
+        </div>
+             
+    </main>
+</body>
+</html>    
